@@ -1,0 +1,79 @@
+.content, .title, .practice, .exam{
+    display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+}
+
+.tenses{
+    padding: 15px;
+    background-color: #014f5c;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.mini-levels{
+ border: 1px solid black;
+ margin: 3px;
+ height: 35px;
+ padding-top: 5px;
+ width: 35px;
+ border-radius: 10px;   
+ text-align: center;
+ transition: all 0.15s ease-in;
+
+}
+
+.mini-levels:hover{
+    transform: scale(1.05);
+}
+.uno{
+    background-color:#F7FF93 ;
+}
+.dos{
+    background-color:#F6F54D ;  
+}
+.tres{
+    background-color: #069A8E;
+    color: white;
+
+}
+.cuatro{
+    background-color: #FF8080;
+    color: white;
+
+}
+.cinco{
+    background-color: #E8630A;
+    color: white;
+}
+
+.title span{
+    color: white;
+    font-size: 22px;
+}
+.title i{
+    font-size: 25px;
+    height: 35px;
+    padding-top: 5px;
+    width: 35px;
+    text-align: center;
+    border-radius: 10px;
+    
+}
+.list{
+    background-color: #FDFFA9;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: all 0.15s ease-in;
+    color: #000;
+}
+.about{
+    transition: all 0.15s ease-in;
+    color: white;
+}
+.about:hover, .list:hover{
+    transform: scale(1.1);
+}
+
+.title{
+    margin-bottom: 5px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deutschy</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/v" href="images/favicon.ico" />
+    
+
+</head>
+
+<body>
+    <nav class="nav">
+            <button class='bx bx-x'></button>
+            <span id="level">Present</span>
+            <span></span>
+    </nav>
+    <section>
+        <div class="column">
+        <div class="title">
+            Conjugate the verb <span id="infinitiv"></span>.
+        </div>
+        <div class="box-content">
+                <button class='bx bxs-left-arrow back control' id="back"></button>
+            <div class="solve-box">
+                <div class="lines">
+                    <div class="pronoun">Translation</div>
+                    <input id="translation" type="text" placeholder="Answer">
+                </div>
+                <div class="lines">
+                    <div class="pronoun">Ich</div>
+                    <input id="fieldIch" type="text" placeholder="Answer">
+                </div>
+                <div class="lines">
+                    <div class="pronoun">Du</div>
+                    <input id="fieldDu" type="text" placeholder="Answer">
+                </div>
+                <div class="lines">
+                    <div class="pronoun">Er/Sie/Es</div>
+                    <input id="fieldEr" type="text" placeholder="Answer">
+                </div>
+                <div class="lines">
+                    <div class="pronoun">Wir</div>
+                    <input id="fieldWir" type="text" placeholder="Answer">
+                </div>
+                <div class="lines">
+                    <div class="pronoun">Ihr</div>
+                    <input id="fieldIhr" type="text" placeholder="Answer">
+                </div>
+                <div class="lines">
+                    <div class="pronoun">Sie/sie</div>
+                    <input id="fieldSie" type="text" placeholder="Answer">
+                </div>
+            </div>
+            <button class='bx bxs-right-arrow next control' id="next"></button>
+            </div>
+            <div class="progress-bar">
+                <div id="fill"></div>
+                <div id="counter"></div>
+            </div>
+            </div>
+    </section>
+</body>
+<!-- JS -->
+<script src="js/manage_verben.js"></script>
+</html>
