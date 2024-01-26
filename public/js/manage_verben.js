@@ -23,6 +23,8 @@ fieldSie.addEventListener("input", (e)=>checkInput(fieldSie,6));
 // Buttons
 var back = document.getElementById("back");
 var next = document.getElementById("next");
+var mainScreen = document.getElementById("backMain");
+
 
 // Bar
 var progressBar = document.getElementById("fill");
@@ -40,7 +42,9 @@ var infinitiv = document.getElementById("infinitiv");
 async function fetchInfo() {
   try {
     // Fetching Data and assigning
-    const response = await fetch("/api-present");
+    const urlParams = new URLSearchParams(window.location.search);
+    const level = urlParams.get('level');
+    const response = await fetch("/api-present"+level);
     const users = await response.json();
     
     let meanwhile = [];
@@ -71,7 +75,7 @@ async function fetchInfo() {
 function assign(){
     progressBar.style.width = (((round + 1) / (infoLength))*100).toString()+"%";
     counter.innerHTML = (round + 1).toString() + "/" + infoLength.toString();
-    infinitiv.innerHTML = info[round][0].Verb;
+    infinitiv.innerHTML = info[round][0].Verb.charAt(0).toUpperCase() + info[round][0].Verb.slice(1);
     document.getElementById("translation");
 
     translation.value = "";
@@ -97,7 +101,7 @@ function assign(){
     fieldWir.style.backgroundColor = "#EEEEEE";
     fieldIhr.style.backgroundColor = "#EEEEEE";
     fieldSie.style.backgroundColor = "#EEEEEE";
-    
+
     translation.disabled = false;
     fieldIch.disabled = false;
     fieldDu.disabled = false;
@@ -127,12 +131,10 @@ function checkInput(field, value) {
     else if(inputValue.length > 0){
         field.style.backgroundColor = '#F08080';      
     }
-    console.log(inputValue);
 
   }
   
 back.addEventListener("click", function() {
-    console.log(round);
     if (round > 0) {
         round--;
         assign();
@@ -142,9 +144,12 @@ back.addEventListener("click", function() {
       }
   });
 
-  next.addEventListener("click", function() {
-    console.log(round);
+  mainScreen.addEventListener("click", function() {
+    window.location.href = "/";
+    
+  });
 
+  next.addEventListener("click", function() {
     if (round < (infoLength - 1)) {
         round++;
         assign();
