@@ -19,7 +19,7 @@ var colors = [
     "FFCDD2FF","FFCDD2FF",
 ];
 
-function createLevels(idName,route, maxLevels) {
+function createLevels(idName,filePath,tense, maxLevels) {
     const levels = document.querySelector(idName + " .scrollable-row");
 
 for (var i = 0; i < maxLevels; i++) {
@@ -32,7 +32,7 @@ for (var i = 0; i < maxLevels; i++) {
     // Add an IIFE to create a closure for the click event listener
     (function (index) {
         div.addEventListener("click", async () => {
-            window.location.href = route + "?level=" + (index+1).toString();
+            window.location.href = `${filePath}?level=${(index+1)}&tense=${tense}`
         });
     })(i);
     
@@ -43,6 +43,6 @@ for (var i = 0; i < maxLevels; i++) {
     
 }
 
-createLevels("#verben-levels", "infinitiv",20);
-createLevels("#wort-levels", "wort",28);
-createLevels("#description-levels", "description",16);
+createLevels("#verben-levels","infinitiv", "infinitiv",20);
+createLevels("#wort-levels","cards", "wort",28);
+createLevels("#description-levels","cards", "description",16);

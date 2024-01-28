@@ -1,0 +1,69 @@
+/* THE MAINCONTAINER HOLDS EVERYTHING */
+
+.maincontainer {
+  width: 340px;
+  height: 300px;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.spacer{
+  height: 40px;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+.thecard{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  cursor: pointer; 
+  margin: 0 20px;
+}
+
+/* THE FLIPPED CLASS CONTROLS THE FLIP ON CLICK */
+.thecard.flipped{
+  transform: rotateY(180deg);
+}
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+.thefront{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #fffbf5;
+  border: 1px solid black;
+  color: #000;
+}
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON CLICK */
+.theback{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #fffbf5;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+  border: 1px solid black;
+}

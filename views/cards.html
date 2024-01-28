@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Deutschy</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+        <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/cards.css" />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/v" href="img/favicon.ico" />
+    </head>
+    <nav class="nav">
+        <button class="bx bx-x" id="backMain"></button>
+        <span id="tense"></span>
+        <span></span>
+    </nav>
+
+    <body>
+        <section>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+
+            <div class="center row">
+                <button class='bx bxs-left-arrow back control' id="back"></button>
+
+                <div class="maincontainer">
+                    <div class="thecard">
+                        <div class="thefront">
+                            <span id="deutsch"></span>
+                        </div>
+                        <div class="theback">
+                            <span id="englisch"></span>
+                        </div>
+                    </div>
+                </div>
+                <button class='bx bxs-right-arrow back control' id="next"></button>
+           
+            </div>
+            <div class="spacer"></div>
+
+            <div class="spacer"></div>
+
+            <div class="progress-bar">
+                <div id="fill"></div>
+                <div id="counter"></div>
+            </div>
+        </section>
+    </body>
+    <!-- JS -->
+    <script src="js/cards.js"></script>
+</html>

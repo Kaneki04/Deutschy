@@ -2,6 +2,7 @@ var info = [];
 var round = 0;
 var infoLength = 0;
 
+
 // Setting verben.ejs Textfields 
 const translation = document.getElementById("translation");
 const fieldIch = document.getElementById("fieldIch");
@@ -118,11 +119,11 @@ function checkInput(field, value) {
     const inputValue = field.value;
   
     // Perform any checks or actions based on the input value
-    if (inputValue == info[round][value].Verb && value!=0) {
+    if (inputValue.toLowerCase() == info[round][value].Verb.toLowerCase() && value!=0) {
         field.style.backgroundColor = '#8FBC8F'; 
-    field.disabled = true;
+        field.disabled = true;
 
-    } else if(value == 0 && inputValue == info[round][value].Translation){
+    } else if(value == 0 && inputValue.toLowerCase() == info[round][value].Translation.toLowerCase()){
         field.style.backgroundColor = '#8FBC8F';  
     field.disabled = true;
 
