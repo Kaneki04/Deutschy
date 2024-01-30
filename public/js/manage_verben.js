@@ -1,6 +1,7 @@
 var info = [];
 var round = 0;
 var infoLength = 0;
+var correctColour =  '#71E571';
 
 
 // Setting verben.ejs Textfields 
@@ -11,6 +12,10 @@ const fieldEr = document.getElementById("fieldEr");
 const fieldWir = document.getElementById("fieldWir");
 const fieldIhr = document.getElementById("fieldIhr");
 const fieldSie = document.getElementById("fieldSie");
+
+var allFields = [
+   translation,fieldIch,fieldDu ,fieldEr,fieldWir,fieldIhr,fieldSie
+];
 
  // Setting Field callBacks
 translation.addEventListener("input", (e)=>checkInput(translation,0));
@@ -117,17 +122,31 @@ function assign(){
 function checkInput(field, value) {
     // Get the current value of the text field
     const inputValue = field.value;
+    field.style.color = "black";
   
     // Perform any checks or actions based on the input value
-    if (inputValue.toLowerCase() == info[round][value].Verb.toLowerCase() && value!=0) {
-        field.style.backgroundColor = '#8FBC8F'; 
+    console.log(info[round][value].Verb.toLowerCase().replace(/ /g, ""));
+    if (inputValue.toLowerCase().replace(/ /g, "") == info[round][value].Verb.toLowerCase().replace(/ /g, "") && value!=0) {
+        field.style.backgroundColor = correctColour; 
+        field.value = info[round][value].Verb;
         field.disabled = true;
+        for (var i = 0; i < allFields.length; i++) {
+          if (!allFields[i].disabled){
+            allFields[i].focus();
+            break;
+          }
+        }
 
-    } else if(value == 0 && inputValue.toLowerCase() == info[round][value].Translation.toLowerCase()){
-        field.style.backgroundColor = '#8FBC8F';  
-    field.disabled = true;
-
-
+    } else if(value == 0 && inputValue.toLowerCase().replace(/ /g, "") == info[round][value].Translation.toLowerCase().replace(/ /g, "")){
+        field.style.backgroundColor = correctColour; 
+        field.value = info[round][value].Translation;
+        field.disabled = true;       
+        for (var i = 0; i < allFields.length; i++) {
+          if (!allFields[i].disabled){
+            allFields[i].focus();
+            break;
+          }
+        }
     } 
     else if(inputValue.length > 0){
         field.style.backgroundColor = '#F08080';      
