@@ -118,7 +118,7 @@ input:focus::placeholder {
 .yellow {
   width: 100px;
   height: 100px;
-  background-color: yellow;
+  background-color: #FFECB3FF;
 }
 
 .white {
@@ -129,7 +129,7 @@ input:focus::placeholder {
 .amber {
   width: 80px;
   height: 80px;
-  background-color: rgb(255, 221, 0);
+  background-color: #FFECB3FF;
 }
 
 .levels-hover .hidden-levels {
